@@ -22,8 +22,15 @@ body::-webkit-scrollbar {
 
 body,
 html {
-    /*min-height: 100vh;*/
-    /*min-height: -webkit-fill-available;*/
+
+}
+
+body.chat {
+    background-color: white;
+}
+
+body.menu {
+    background-color: #F4F6F8;
 }
 
 @media (max-width: 1024px) {
