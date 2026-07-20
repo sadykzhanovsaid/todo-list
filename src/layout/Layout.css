@@ -1,5 +1,7 @@
 .application {
-    height: 100dvh;
+    overflow: hidden;
+
+    height: 100vh;
 
     display: flex;
 }
