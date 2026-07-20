@@ -18,7 +18,7 @@ function App() {
     return (
         <>
             <Layout/>
-            <Create open={open} setOpen={setOpen}/>
+            {/*<Create open={open} setOpen={setOpen}/>*/}
         </>
     )
 }
