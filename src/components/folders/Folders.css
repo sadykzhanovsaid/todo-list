@@ -3,7 +3,6 @@
     height: 100%;
 
     background-color: #F4F6F8;
-    border-right: 1px solid #F1F1F1;
 
     padding-top: env(safe-area-inset-top, 20px);
 

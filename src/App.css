@@ -20,9 +20,8 @@ body::-webkit-scrollbar {
     width: 0;
 }
 
-body,
-html {
-
+body {
+    transition: all 0.2s ease
 }
 
 body.menu {
