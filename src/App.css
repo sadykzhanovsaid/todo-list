@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 body,
 html {
     /*min-height: 100vh;*/
-    min-height: -webkit-fill-available;
+    /*min-height: -webkit-fill-available;*/
 }
 
 @media (max-width: 1024px) {
