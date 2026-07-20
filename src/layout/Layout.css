@@ -1,5 +1,11 @@
 .application {
-    height: 100vh;
+    height: 100dvh;
 
     display: flex;
+}
+
+@media (display-mode: standalone) {
+    .application {
+        height: 100vh;
+    }
 }
