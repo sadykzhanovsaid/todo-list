@@ -10,7 +10,7 @@
 
 @media (max-width: 480px) {
     .todos {
-        width: 35%;
+        width: 30%;
 
         border: 1px solid #F1F1F1;
         border-top-left-radius: 36px;
