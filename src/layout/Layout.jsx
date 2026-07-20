@@ -17,6 +17,18 @@ function Layout() {
         }
     }, [isMenu])
 
+    useEffect(() => {
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
+            window.matchMedia('(display-mode: fullscreen)').matches ||
+            window.navigator.standalone === true ||
+            !!window.Telegram?.WebApp?.initData;
+
+        if (isStandalone) {
+            document.documentElement.classList.add('is-webapp');
+        }
+    }, []);
+
+
     return (
         <div className="application">
             <Folders isMenu={isMenu} setIsMenu={setIsMenu}/>

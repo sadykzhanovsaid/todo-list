@@ -4,8 +4,6 @@
     display: flex;
 }
 
-@media (display-mode: fullscreen), (display-mode: standalone), (display-mode: minimal-ui) {
-    .application {
-        height: 100vh;
-    }
+html.is-webapp .application {
+    height: 100vh;
 }
