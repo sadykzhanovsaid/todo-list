@@ -10,10 +10,18 @@
 
 @media (max-width: 480px) {
     .todos {
-        width: 30%;
+        width: 35%;
+
+        border: 1px solid #F1F1F1;
+        border-top-left-radius: 36px;
+        border-bottom-left-radius: 36px;
     }
 
     .todos.active {
         width: 100%;
+
+        border: 1px solid transparent;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }
