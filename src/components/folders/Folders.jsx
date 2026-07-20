@@ -3,9 +3,7 @@ import "./Folders.css"
 
 function Folders() {
     return (
-        <div className="folders">
-
-        </div>
+        <div className="folders"></div>
     );
 }
 

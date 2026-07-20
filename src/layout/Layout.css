@@ -1,6 +1,4 @@
 .application {
-    overflow: hidden;
-
     height: 100vh;
 
     display: flex;

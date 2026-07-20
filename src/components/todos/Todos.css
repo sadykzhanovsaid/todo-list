@@ -3,10 +3,3 @@
 
     background-color: white;
 }
-
-@media (max-width: 700px) {
-    .folders {
-        width: 100%;
-        z-index: 100;
-    }
-}
