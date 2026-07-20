@@ -1,5 +1,6 @@
 .folders {
     width: calc((200px / 100) * 110);
+    height: 100%;
 
     background-color: #F4F6F8;
     border-right: 1px solid #F1F1F1;
