@@ -4,11 +4,8 @@
     display: flex;
 }
 
-@media (display-mode: standalone) {
+@media (display-mode: fullscreen) {
     .application {
         height: 100vh;
-
-        padding: 100px;
-        background-color: red;
     }
 }
