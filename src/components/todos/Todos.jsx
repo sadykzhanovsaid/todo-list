@@ -1,9 +1,9 @@
 import React from "react"
 import "./Todos.css"
 
-function Todos() {
+function Todos({isMenu, setIsMenu}) {
     return (
-        <div className="todos"></div>
+        <div onClick={() => setIsMenu(!isMenu)} className={`todos ${isMenu ? "" : "active"}`}></div>
     );
 }
 

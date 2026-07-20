@@ -1,9 +1,9 @@
 import React from "react"
 import "./Folders.css"
 
-function Folders() {
+function Folders({isMenu, setIsMenu}) {
     return (
-        <div className="folders"></div>
+        <div className={`folders ${isMenu ? "active" : ""}`}></div>
     );
 }
 

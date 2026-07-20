@@ -19,3 +19,15 @@
 body::-webkit-scrollbar {
     width: 0;
 }
+
+@media (max-width: 1024px) {
+    body {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        display: block;
+    }
+}
