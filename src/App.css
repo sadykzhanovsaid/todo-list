@@ -24,6 +24,8 @@ body,
 html {
     /*min-height: 100vh;*/
     /*min-height: -webkit-fill-available;*/
+
+    background-color: red;
 }
 
 @media (max-width: 1024px) {
