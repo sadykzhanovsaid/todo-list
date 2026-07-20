@@ -25,11 +25,11 @@ html {
 
 }
 
-body.chat {
+body.menu {
     background-color: white;
 }
 
-body.menu {
+body.chat {
     background-color: #F4F6F8;
 }
 
