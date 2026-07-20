@@ -82,6 +82,8 @@
     letter-spacing: calc((0.15px / 100) * 110);
     color: #C7C7C7;
 
+    text-transform: capitalize;
+
     &::placeholder {
         font-weight: 400;
         font-size: calc((14px / 100) * 110);
