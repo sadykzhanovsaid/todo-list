@@ -4,6 +4,8 @@
     background-color: white;
 
     transition: all 0.5s ease;
+
+    padding-top: env(safe-area-inset-top, 20px);
 }
 
 @media (max-width: 480px) {

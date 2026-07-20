@@ -20,6 +20,11 @@ body::-webkit-scrollbar {
     width: 0;
 }
 
+body,
+html {
+    height: 100vh;
+}
+
 @media (max-width: 1024px) {
     body {
         display: none;
