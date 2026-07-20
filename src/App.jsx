@@ -41,7 +41,7 @@ function App() {
                         top: 0,
                         left: 0,
                         width: "75%",
-                        height: "100vh",
+                        height: "100%",
                         color: "#fff",
                         padding: "40px 20px",
                         boxSizing: "border-box",
@@ -89,7 +89,7 @@ function App() {
                         position: "relative",
                         zIndex: 2,
                         width: "100%",
-                        height: "100vh", // Высота строго 100vh
+                        height: "100%", // Высота строго 100vh
                         background: "#131314",
                         color: "#fff",
                         touchAction: "pan-y",
