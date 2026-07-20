@@ -25,7 +25,7 @@ html {
     /*min-height: 100vh;*/
     /*min-height: -webkit-fill-available;*/
 
-    background-color: red;
+    background: linear-gradient(to right, #F4F6F8 calc(70% - 1px), #F1F1F1 1px, white 30%);
 }
 
 @media (max-width: 1024px) {
