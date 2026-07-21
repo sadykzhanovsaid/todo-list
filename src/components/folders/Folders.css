@@ -29,4 +29,8 @@
         width: 70%;
         border: none;
     }
+
+    body.is-webapp .folders {
+        padding: calc((50px / 100) * 110) calc((20px / 100) * 110);
+    }
 }

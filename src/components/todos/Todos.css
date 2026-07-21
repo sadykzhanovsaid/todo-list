@@ -44,4 +44,8 @@
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
+
+    body.is-webapp .todos {
+        padding: calc((50px / 100) * 110) calc((20px / 100) * 110);
+    }
 }
