@@ -9,6 +9,10 @@
 
     /*padding-top: env(safe-area-inset-top, 20px);*/
 
+    display: flex;
+    flex-direction: column;
+    gap: calc(30px * 1.1);
+
     transition: all 0.5s ease;
 
     overflow-y: scroll;
@@ -41,6 +45,155 @@
 .folders__add-icon {
     width: calc(10px * 1.1);
     height: calc(10px * 1.1);
+}
+
+.folders__all {
+    padding: calc(10px * 1.1);
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: calc(10px * 1.1);
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: black;
+
+    background-color: transparent;
+    border-radius: calc(4px * 1.1);
+
+    transition: 0.1s ease;
+}
+
+@media (hover: hover) {
+    .folders__all:hover {
+        background-color: white;
+        /*box-shadow: 0 2px 10px #00000008;*/
+
+        cursor: pointer;
+    }
+
+    .folders__all:focus {
+        background-color: white;
+        /*box-shadow: 0 2px 10px #00000008;*/
+    }
+}
+
+@media (hover: none) {
+    .folders__all:focus {
+        background-color: white;
+        /*box-shadow: 0 2px 10px #00000008;*/
+    }
+}
+
+.folders__all-icon {
+    width: calc(12px * 1.1);
+    height: calc(10px * 1.1);
+}
+
+.folders__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.folders__folder {
+    padding: calc(10px * 1.1);
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: calc(10px * 1.1);
+
+    position: relative;
+
+    background-color: transparent;
+    border-radius: calc(4px * 1.1);
+
+    transition: 0.1s ease;
+}
+
+@media (hover: hover) {
+    .folders__folder:hover {
+        background-color: white;
+        /*box-shadow: 0 2px 10px #00000008;*/
+
+        cursor: pointer;
+    }
+
+    .folders__folder:focus {
+        background-color: white;
+        /*box-shadow: 0 2px 10px #00000008;*/
+    }
+}
+
+@media (hover: none) {
+    .folders__folder:focus {
+        background-color: white;
+        /*box-shadow: 0 2px 10px #00000008;*/
+    }
+}
+
+.folders__folder-color {
+    width: calc(10px * 1.1);
+    height: calc(10px * 1.1);
+
+    background-color: #64C4ED;
+    border-radius: 50%;
+}
+
+.folders__folder-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: black;
+
+    text-align: start;
+
+    width: 75%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.folders__folder-delete {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: all 0.1s ease;
+
+    opacity: 0;
+}
+
+@media (hover: hover) {
+    .folders__folder:hover {
+
+        .folders__folder-delete {
+            opacity: 1;
+        }
+    }
+
+    .folders__folder:focus {
+
+        .folders__folder-delete {
+            opacity: 1;
+        }
+    }
+}
+
+@media (hover: none) {
+    .folders__folder:focus {
+
+        .folders__folder-delete {
+            opacity: 1;
+        }
+    }
 }
 
 @media (max-width: 480px) {
