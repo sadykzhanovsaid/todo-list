@@ -1,38 +1,38 @@
 .create {
     opacity: 0;
 
-    padding: calc((20px / 100) * 110);
+    padding: calc(20px * 1.1);
 
-    width: calc((235px / 100) * 110);
+    width: calc(235px * 1.1);
 
     display: flex;
     flex-direction: column;
-    gap: calc((15px / 100) * 110);
+    gap: calc(15px * 1.1);
 
     position: fixed;
     left: -300px;
-    bottom: calc((30px / 100) * 110);
+    bottom: calc(30px * 1.1);
 
     transform: rotate(-30deg);
 
     background-color: white;
-    border-radius: calc((10px / 100) * 110);
-    box-shadow: 0 calc((5px / 100) * 110) calc((10px / 100) * 110) #0000000D;
+    border-radius: calc(10px * 1.1);
+    box-shadow: 0 calc(5px * 1.1) calc(10px * 1.1) #0000000D;
 
     transition: all 0.5s ease;
 
     &.active {
         opacity: 1;
 
-        left: calc((30px / 100) * 110);
+        left: calc(30px * 1.1);
 
         transform: rotate(0deg);
     }
 }
 
 .create__close {
-    width: calc((20px / 100) * 110);
-    height: calc((20px / 100) * 110);
+    width: calc(20px * 1.1);
+    height: calc(20px * 1.1);
 
     position: absolute;
     right: -5px;
@@ -70,25 +70,23 @@
 }
 
 .create__input {
-    padding: calc((8px / 100) * 110) calc((10px / 100) * 110);
+    padding: calc(8px * 1.1) calc(10px * 1.1);
 
     background-color: white;
-    border-radius: calc((4px / 100) * 110);
-    border: calc((1px / 100) * 110) solid #EFEFEF;
+    border-radius: calc(4px * 1.1);
+    border: 1px solid #EFEFEF;
 
     font-weight: 400;
-    font-size: calc((14px / 100) * 110);
+    font-size: calc(14px * 1.1);
     line-height: 100%;
-    letter-spacing: calc((0.15px / 100) * 110);
     color: #C7C7C7;
 
     text-transform: capitalize;
 
     &::placeholder {
         font-weight: 400;
-        font-size: calc((14px / 100) * 110);
+        font-size: calc(14px * 1.1);
         line-height: 100%;
-        letter-spacing: calc((0.15px / 100) * 110);
         color: #C7C7C7;
     }
 }
@@ -99,10 +97,10 @@
 }
 
 .color {
-    width: calc((20px / 100) * 110);
-    height: calc((20px / 100) * 110);
+    width: calc(20px * 1.1);
+    height: calc(20px * 1.1);
 
-    border: calc((2px / 100) * 110) solid transparent;
+    border: 2px solid transparent;
 
     border-radius: 50%;
 
@@ -111,22 +109,21 @@
     cursor: pointer;
 
     &.active {
-        border: calc((2px / 100) * 110) solid #525252;
+        border: 2px solid #525252;
     }
 }
 
 .create__submit {
-    padding: calc((10px / 100) * 110);
+    padding: calc(10px * 1.1);
 
     font-weight: 400;
-    font-size: calc((14px / 100) * 110);
+    font-size: calc(14px * 1.1);
     line-height: 100%;
-    letter-spacing: calc((0.15px / 100) * 110);
     color: white;
 
     background-color: #4DD599;
-    border-radius: calc((4px / 100) * 110);
-    border: calc((1px / 100) * 110) solid transparent;
+    border-radius: calc(4px * 1.1);
+    border: 1px solid transparent;
 
     transition: transform 0.1s ease, opacity 0.2s ease;
 }
