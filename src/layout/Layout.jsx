@@ -23,7 +23,7 @@ function Layout() {
             window.navigator.standalone === true
 
         if (isStandalone) {
-            document.documentElement.classList.add("is-webapp");
+            document.querySelector("body").classList.add("is-webapp");
         }
     }, []);
 

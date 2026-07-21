@@ -4,6 +4,6 @@
     display: flex;
 }
 
-html.is-webapp .application {
+body.is-webapp .application {
     height: 100vh;
 }
