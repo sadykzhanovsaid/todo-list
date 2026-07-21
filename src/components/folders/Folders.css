@@ -5,7 +5,7 @@
     height: 100%;
 
     background-color: #F4F6F8;
-    border: 1px solid #F1F1F1;
+    border: calc((1px / 100) * 110) solid #F1F1F1;
 
     /*padding-top: env(safe-area-inset-top, 20px);*/
 
@@ -16,6 +16,30 @@
     &::-webkit-scrollbar {
         width: 0;
     }
+}
+
+.folders__add {
+    padding: calc((10px / 100) * 110);
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: calc((10px / 100) * 110);
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: calc((0.15px / 100) * 110);
+    color: #767676;
+
+    background-color: transparent;
+    border-radius: calc((4px / 100) * 110);
+}
+
+.folders__add-icon {
+    width: calc((10px / 100) * 110);
+    height: calc((10px / 100) * 110);
 }
 
 @media (max-width: 480px) {

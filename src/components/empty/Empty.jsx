@@ -3,9 +3,7 @@ import "./Empty.css"
 
 function Empty({isMenu}) {
     return (
-        <div className="empty">
-            <p className={`empty__title ${isMenu ? "" : "active"}`}>Задачи отсутствуют.</p>
-        </div>
+        <p className="empty__title">Задачи отсутствуют</p>
     );
 }
 

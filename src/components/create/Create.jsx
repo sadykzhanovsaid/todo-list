@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import "./Create.css"
 
-import Close from "../../assets/delete.svg?react"
+import Close from "../../assets/close.svg?react"
 
 function Create({open, setOpen}) {
     const [color, setColor] = useState("#C9D1D3")

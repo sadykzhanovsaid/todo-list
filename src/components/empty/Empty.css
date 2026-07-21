@@ -1,3 +1,9 @@
-.empty {}
+.empty__title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    color: #C9D1D3;
 
-.empty__title {}
+    text-align: center;
+}
