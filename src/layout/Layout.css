@@ -1,7 +1,7 @@
 .application {
     height: 100dvh;
 
-    /*display: flex;*/
+    display: flex;
 
     position: relative;
 
