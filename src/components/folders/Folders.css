@@ -20,15 +20,13 @@
 
 @media (max-width: 480px) {
     .folders {
+        padding: calc((30px / 100) * 110) calc((20px / 100) * 110);
+
         position: absolute;
         left: 0;
         top: 0;
 
         width: 70%;
         border: none;
-    }
-
-    .folders.active {
-        width: 70%;
     }
 }
