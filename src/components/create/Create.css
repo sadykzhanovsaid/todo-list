@@ -149,3 +149,9 @@
         transform: scale(0.95);
     }
 }
+
+@media (max-width: 480px) {
+    .create {
+        display: none;
+    }
+}

@@ -3,12 +3,22 @@ import "./Todos.css"
 
 import Empty from "../empty/Empty.jsx"
 
-function Todos({isMenu, setIsMenu, folders, category}) {
+function Todos({
+                   isMenu,
+                   setIsMenu,
+                   folders,
+                   setFolders,
+                   category,
+                   setCategory
+               }) {
 
     const folder = folders.find(folder => folder.id === category);
 
     return (
-        <div onClick={() => setIsMenu(!isMenu)} className={`todos ${isMenu ? "" : `active`} ${folders.length === 0 ? "empty" : ""}`}>
+        <div
+            onClick={() => setIsMenu(!isMenu)}
+            className={`todos ${isMenu ? "" : `active`} ${folders.length === 0 ? "empty" : ""}`}
+        >
             {folders.length >= 1 ?
                 <>
                     {category === "all" ? folders.map((todos) => {

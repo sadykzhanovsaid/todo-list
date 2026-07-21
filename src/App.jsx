@@ -9,11 +9,14 @@ function App() {
         const savedFolders= localStorage.getItem("folders");
         return savedFolders ? JSON.parse(savedFolders) : [];
     });
+
     const [category, setCategory] = useState(() => {
         const savedCategory = localStorage.getItem("category");
         return savedCategory ? JSON.parse(savedCategory) : "";
     });
+
     const [open, setOpen] = useState(false)
+
     const [isMenu, setIsMenu] = useState(() => {
         const savedIsMenu = localStorage.getItem("isMenu");
         return savedIsMenu ? JSON.parse(savedIsMenu) : false;
@@ -38,8 +41,23 @@ function App() {
 
     return (
         <>
-            <Layout isMenu={isMenu} setIsMenu={setIsMenu} folders={folders} setFolders={setFolders} open={open} setOpen={setOpen} category={category} setCategory={setCategory} deleteFolder={deleteFolder}/>
-            <Create open={open} setOpen={setOpen} addFolder={addFolder}/>
+            <Layout
+                isMenu={isMenu}
+                setIsMenu={setIsMenu}
+                folders={folders}
+                setFolders={setFolders}
+                open={open}
+                setOpen={setOpen}
+                category={category}
+                setCategory={setCategory}
+                addFolder={addFolder}
+                deleteFolder={deleteFolder}
+            />
+            <Create
+                open={open}
+                setOpen={setOpen}
+                addFolder={addFolder}
+            />
         </>
     )
 }

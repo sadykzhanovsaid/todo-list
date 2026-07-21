@@ -3,24 +3,28 @@ import "./Create.css"
 
 import Close from "../../assets/close.svg?react"
 
-function Create({open, setOpen, addFolder}) {
+function Create({
+                    open,
+                    setOpen,
+                    addFolder
+                }) {
     const [color, setColor] = useState("#C9D1D3")
-    const [value, setValue] = useState("")
+    const [title, setTitle] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (value.trim() === "") return;
+        if (title.trim() === "") return;
 
         addFolder({
             id: Date.now(),
-            title: value,
+            title,
             color,
             todos: []
         });
 
-        setValue("");
         setOpen(false);
+        setTitle("");
     }
 
     return (
@@ -29,8 +33,8 @@ function Create({open, setOpen, addFolder}) {
 
             <input
                 type="text"
-                onChange={(e) => setValue(e.target.value)}
-                value={value}
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
                 className="create__input"
                 placeholder="Название папки"
             />
