@@ -1,11 +1,13 @@
 .folders {
+    padding: calc((50px / 100) * 110) calc((20px / 100) * 110);
+
     width: calc((200px / 100) * 110);
     height: 100%;
 
     background-color: #F4F6F8;
     border: 1px solid #F1F1F1;
 
-    padding-top: env(safe-area-inset-top, 20px);
+    /*padding-top: env(safe-area-inset-top, 20px);*/
 
     transition: all 0.5s ease;
 
