@@ -14,19 +14,19 @@ function Folders({isMenu, setIsMenu}) {
             </button>
 
             <div className="folders__list">
-                <button className="folders__folder">
+                <button className="folders__folder" tabIndex="1">
                     <div className="folders__folder-color"></div>
                     <p className="folders__folder-title">Покупки</p>
                     <Delete className="folders__folder-delete"/>
                 </button>
 
-                <button className="folders__folder">
+                <button className="folders__folder" tabIndex="1">
                     <div className="folders__folder-color"></div>
                     <p className="folders__folder-title">Фронтенд</p>
                     <Delete className="folders__folder-delete"/>
                 </button>
 
-                <button className="folders__folder">
+                <button className="folders__folder" tabIndex="1">
                     <div className="folders__folder-color"></div>
                     <p className="folders__folder-title">Фильмы и сериал</p>
                     <Delete className="folders__folder-delete"/>
