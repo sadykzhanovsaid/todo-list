@@ -188,7 +188,7 @@
 }
 
 @media (hover: none) {
-    .folders__folder:focus {
+    .folders__folder:focus-visible {
 
         .folders__folder-delete {
             opacity: 1;
