@@ -8,7 +8,7 @@ import Delete from "../../assets/delete.svg?react"
 function Folders({isMenu, setIsMenu}) {
     return (
         <div className={`folders ${isMenu ? "active" : ""}`}>
-            <button className="folders__all">
+            <button className="folders__all" tabIndex="1">
                 <All className="folders__all-icon"/>
                 Все задачи
             </button>

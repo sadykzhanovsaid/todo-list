@@ -64,7 +64,7 @@
     background-color: transparent;
     border-radius: calc(4px * 1.1);
 
-    transition: 0.1s ease;
+    transition: 0.2s ease;
 }
 
 @media (hover: hover) {
@@ -113,7 +113,7 @@
     background-color: transparent;
     border-radius: calc(4px * 1.1);
 
-    transition: 0.1s ease;
+    transition: 0.2s ease;
 }
 
 @media (hover: hover) {
@@ -166,7 +166,7 @@
     top: 50%;
     transform: translateY(-50%);
 
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 
     opacity: 0;
 }
