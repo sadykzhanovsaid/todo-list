@@ -209,6 +209,6 @@
     }
 
     body.is-webapp .folders {
-        padding: calc(50px * 1.1) calc(20px * 1.1);
+        padding: calc(70px * 1.1) calc(20px * 1.1);
     }
 }
