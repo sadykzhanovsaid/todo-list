@@ -65,6 +65,10 @@
     border-radius: calc(4px * 1.1);
 
     transition: 0.2s ease;
+
+    &.active {
+        background-color: white;
+    }
 }
 
 @media (hover: hover) {
@@ -73,18 +77,6 @@
         /*box-shadow: 0 2px 10px #00000008;*/
 
         cursor: pointer;
-    }
-
-    .folders__all:focus {
-        background-color: white;
-        /*box-shadow: 0 2px 10px #00000008;*/
-    }
-}
-
-@media (hover: none) {
-    .folders__all:focus {
-        background-color: white;
-        /*box-shadow: 0 2px 10px #00000008;*/
     }
 }
 
@@ -114,6 +106,10 @@
     border-radius: calc(4px * 1.1);
 
     transition: 0.2s ease;
+
+    &.active {
+        background-color: white;
+    }
 }
 
 @media (hover: hover) {
@@ -122,18 +118,6 @@
         /*box-shadow: 0 2px 10px #00000008;*/
 
         cursor: pointer;
-    }
-
-    .folders__folder:focus {
-        background-color: white;
-        /*box-shadow: 0 2px 10px #00000008;*/
-    }
-}
-
-@media (hover: none) {
-    .folders__folder:focus {
-        background-color: white;
-        /*box-shadow: 0 2px 10px #00000008;*/
     }
 }
 
@@ -160,6 +144,10 @@
     text-overflow: ellipsis;
 }
 
+.folders__folder.active .folders__folder-delete {
+    opacity: 1;
+}
+
 .folders__folder-delete {
     position: absolute;
     right: 15px;
@@ -173,22 +161,6 @@
 
 @media (hover: hover) {
     .folders__folder:hover {
-
-        .folders__folder-delete {
-            opacity: 1;
-        }
-    }
-
-    .folders__folder:focus {
-
-        .folders__folder-delete {
-            opacity: 1;
-        }
-    }
-}
-
-@media (hover: none) {
-    .folders__folder:focus {
 
         .folders__folder-delete {
             opacity: 1;

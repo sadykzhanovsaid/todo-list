@@ -11,14 +11,15 @@
 
     overflow-y: scroll;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &.empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     &::-webkit-scrollbar {
         width: 0;
     }
-
 }
 
 @media (max-width: 480px) {

@@ -3,15 +3,34 @@ import "./Create.css"
 
 import Close from "../../assets/close.svg?react"
 
-function Create({open, setOpen}) {
+function Create({open, setOpen, addFolder}) {
     const [color, setColor] = useState("#C9D1D3")
+    const [value, setValue] = useState("")
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        if (value.trim() === "") return;
+
+        addFolder({
+            id: Date.now(),
+            title: value,
+            color,
+            todos: []
+        });
+
+        setValue("");
+        setOpen(false);
+    }
 
     return (
-        <div className={`create ${open ? "active" : ""}`}>
+        <form className={`create ${open ? "active" : ""}`} onSubmit={handleSubmit}>
             <Close className="create__close" onClick={() => setOpen(false)}/>
 
             <input
                 type="text"
+                onChange={(e) => setValue(e.target.value)}
+                value={value}
                 className="create__input"
                 placeholder="Название папки"
             />
@@ -36,7 +55,7 @@ function Create({open, setOpen}) {
             </div>
 
             <button type="submit" className="create__submit">Добавить</button>
-        </div>
+        </form>
     );
 }
 

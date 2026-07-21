@@ -4,9 +4,7 @@ import "./Layout.css"
 import Folders from "../components/folders/Folders.jsx"
 import Todos from "../components/todos/Todos.jsx"
 
-function Layout() {
-    const [isMenu, setIsMenu] = useState(false)
-
+function Layout({folders, open, setOpen, category, setCategory, deleteFolder, setFolders, isMenu, setIsMenu}) {
     useEffect(() => {
         if (isMenu) {
             document.querySelector("body").classList.remove("menu")
@@ -27,11 +25,10 @@ function Layout() {
         }
     }, []);
 
-
     return (
         <div className="application">
-            <Folders isMenu={isMenu} setIsMenu={setIsMenu}/>
-            <Todos isMenu={isMenu} setIsMenu={setIsMenu}/>
+            <Folders isMenu={isMenu} setIsMenu={setIsMenu} folders={folders} open={open} setOpen={setOpen} category={category} setCategory={setCategory} deleteFolder={deleteFolder}/>
+            <Todos isMenu={isMenu} setIsMenu={setIsMenu} folders={folders} category={category}/>
         </div>
     );
 }

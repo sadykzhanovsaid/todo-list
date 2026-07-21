@@ -1,7 +1,7 @@
 import React from "react"
 import "./Empty.css"
 
-function Empty({isMenu}) {
+function Empty() {
     return (
         <p className="empty__title">Задачи отсутствуют</p>
     );
