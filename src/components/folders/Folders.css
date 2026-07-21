@@ -188,7 +188,7 @@
 }
 
 @media (hover: none) {
-    .folders__folder:focus-visible {
+    .folders__folder:focus {
 
         .folders__folder-delete {
             opacity: 1;
@@ -206,12 +206,6 @@
 
         width: 70%;
         border: none;
-
-        transform: scale(0.95);
-    }
-
-    .folders.active {
-        transform: scale(1);
     }
 
     body.is-webapp .folders {
