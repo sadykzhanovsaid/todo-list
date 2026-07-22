@@ -1,0 +1,7 @@
+.folder {
+
+    & > input {
+        width: 100%;
+        font-size: 32px;
+    }
+}
