@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import "./Folders.css"
 
 import Add from "../../assets/add.svg?react"
@@ -17,7 +17,8 @@ function Folders({
                      deleteFolder,
                      addFolder,
                  }) {
-    const [color, setColor] = useState(["#C9D1D3", "#42B883", "#64C4ED", "#FFBBCC", "#B6E6BD", "#C355F5", "#090119", "#FF6464"])
+    const color = ["#C9D1D3", "#42B883", "#64C4ED", "#FFBBCC", "#B6E6BD", "#C355F5", "#090119", "#FF6464"]
+
     return (
         <div className={`folders ${isMenu ? "active" : ""}`}>
             {folders.length >= 1 ?
@@ -72,8 +73,8 @@ function Folders({
                         setIsMenu(!isMenu);
                         addFolder({
                             id: Date.now(),
-                            title: "название папки",
-                            color: color[Math.floor(Math.random() * 8)],
+                            title: `Название папки ${folders.length + 1}`,
+                            color: color[Math.floor(Math.random() * 9)],
                             todos: []
                         })
                     } else {

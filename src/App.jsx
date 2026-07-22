@@ -36,7 +36,24 @@ function App() {
     function deleteFolder(id) {
         setFolders(prev => prev.filter(folder => folder.id !== id));
         setCategory("all")
-        setIsMenu(!isMenu)
+
+        console.log(
+            folders.length
+        )
+
+        if (folders.length >= 2) {
+            setIsMenu(!isMenu)
+        }
+    }
+
+    function updateFolder(id, title) {
+        setFolders(prev =>
+            prev.map(folder =>
+                folder.id === id
+                    ? { ...folder, title }
+                    : folder
+            )
+        );
     }
 
     return (
@@ -52,6 +69,7 @@ function App() {
                 setCategory={setCategory}
                 addFolder={addFolder}
                 deleteFolder={deleteFolder}
+                updateFolder={updateFolder}
             />
             <Create
                 open={open}

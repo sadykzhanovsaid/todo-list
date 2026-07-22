@@ -29,11 +29,18 @@ function Create({
 
     return (
         <form className={`create ${open ? "active" : ""}`} onSubmit={handleSubmit}>
-            <Close className="create__close" onClick={() => setOpen(false)}/>
+            <Close className="create__close" onClick={() => {
+                setOpen(false)
+                setTitle("")
+            }}/>
 
             <input
                 type="text"
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => {
+                    const value = e.target.value
+
+                    setTitle(value.charAt(0).toUpperCase() + value.slice(1))
+                }}
                 value={title}
                 className="create__input"
                 placeholder="Название папки"

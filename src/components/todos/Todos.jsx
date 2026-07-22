@@ -2,6 +2,7 @@ import React from "react"
 import "./Todos.css"
 
 import Empty from "../empty/Empty.jsx"
+import Folder from "./folder/Folder.jsx"
 
 function Todos({
                    isMenu,
@@ -9,10 +10,11 @@ function Todos({
                    folders,
                    setFolders,
                    category,
-                   setCategory
+                   setCategory,
+                   updateFolder
                }) {
 
-    const folder = folders.find(folder => folder.id === category);
+    const el = folders.find(folder => folder.id === category);
 
     return (
         <div
@@ -21,9 +23,12 @@ function Todos({
         >
             {folders.length >= 1 ?
                 <>
-                    {category === "all" ? folders.map((todos) => {
-                        return <p key={todos.id}>{todos.title}</p>
-                    }) : folder ? <p key={folder.id}>{folder.title}</p> : null}
+                    {category === "all" ?
+                        <div className="todos__folders">
+                            {folders.map((el) => {
+                                return <Folder key={el.id} el={el} updateFolder={updateFolder}/>
+                            })}
+                        </div> : el ? <Folder key={el.id} el={el} updateFolder={updateFolder}/> : null}
                 </> : <Empty/>
             }
         </div>
