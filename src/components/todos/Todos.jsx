@@ -10,26 +10,28 @@ function Todos({
                    folders,
                    setFolders,
                    category,
-                   setCategory,
-                   updateFolder,
-                   deleteFolder
+                   setCategory
                }) {
 
-    const el = folders.find(folder => folder.id === category)
+    const folder = folders.find(folder => folder.id === category)
 
     return (
         <div
-            onClick={() => setIsMenu(!isMenu)}
+            onClick={() => {
+                if (window.innerWidth <= 480) {
+                    setIsMenu(!isMenu)
+                }
+            }}
             className={`todos ${isMenu ? "" : `active`} ${folders.length === 0 ? "empty" : ""}`}
         >
             {folders.length >= 1 ?
                 <>
                     {category === "all" ?
                         <div className="todos__folders">
-                            {folders.map((el) => {
-                                return <Folder key={el.id} el={el} updateFolder={updateFolder} deleteFolder={deleteFolder}/>
+                            {folders.map((folder) => {
+                                return <Folder key={folder.id} folder={folder}/>
                             })}
-                        </div> : el ? <Folder key={el.id} el={el} updateFolder={updateFolder} deleteFolder={deleteFolder}/> : null}
+                        </div> : folder ? <Folder key={folder.id} folder={folder}/> : null}
                 </> : <Empty/>
             }
         </div>

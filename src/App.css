@@ -21,15 +21,15 @@ body::-webkit-scrollbar {
 }
 
 body {
-    transition: background-color 0.5s ease
-}
+    transition: background-color 0.5s ease;
 
-body.menu {
-    background-color: white;
-}
+    &.menu {
+        background-color: white;
+    }
 
-body.chat {
-    background-color: #F4F6F8;
+    &.chat {
+        background-color: #F4F6F8;
+    }
 }
 
 @media (max-width: 1024px) {

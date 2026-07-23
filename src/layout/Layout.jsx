@@ -32,9 +32,9 @@ function Layout({
             window.navigator.standalone === true
 
         if (isStandalone) {
-            document.querySelector("body").classList.add("is-webapp");
+            document.querySelector("body").classList.add("is-webapp")
         }
-    }, []);
+    }, [])
 
     return (
         <div className="application">
@@ -57,8 +57,6 @@ function Layout({
                 setFolders={setFolders}
                 category={category}
                 setCategory={setCategory}
-                deleteFolder={deleteFolder}
-                updateFolder={updateFolder}
             />
         </div>
     );

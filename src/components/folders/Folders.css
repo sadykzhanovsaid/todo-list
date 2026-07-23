@@ -7,8 +7,6 @@
     background-color: #F4F6F8;
     border: 1px solid #F1F1F1;
 
-    /*padding-top: env(safe-area-inset-top, 20px);*/
-
     display: flex;
     flex-direction: column;
     gap: calc(30px * 1.1);
@@ -64,7 +62,9 @@
     background-color: transparent;
     border-radius: calc(4px * 1.1);
 
-    transition: 0.2s ease;
+    transition: 0.3s ease;
+
+    cursor: pointer;
 
     &.active {
         background-color: white;
@@ -74,9 +74,6 @@
 @media (hover: hover) {
     .folders__all:hover {
         background-color: white;
-        /*box-shadow: 0 2px 10px #00000008;*/
-
-        cursor: pointer;
     }
 }
 
@@ -89,13 +86,16 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    &:not(:hover) .folders__folder.active {
+        background-color: white;
+    }
 }
 
 .folders__folder {
     padding: calc(10px * 1.1);
 
     width: 100%;
-    height: 38px;
 
     display: flex;
     align-items: center;
@@ -106,9 +106,11 @@
     background-color: transparent;
     border-radius: calc(4px * 1.1);
 
-    transition: 0.2s ease;
+    transition: 0.3s ease;
 
-    &.active {
+    cursor: pointer;
+
+    &:hover {
         background-color: white;
     }
 }
@@ -116,9 +118,6 @@
 @media (hover: hover) {
     .folders__folder:hover {
         background-color: white;
-        /*box-shadow: 0 2px 10px #00000008;*/
-
-        cursor: pointer;
     }
 }
 
@@ -126,7 +125,6 @@
     width: calc(10px * 1.1);
     height: calc(10px * 1.1);
 
-    background-color: #64C4ED;
     border-radius: 50%;
 }
 
@@ -155,7 +153,7 @@
     top: 50%;
     transform: translateY(-50%);
 
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 
     opacity: 0;
 }
@@ -178,6 +176,7 @@
         top: 0;
 
         width: 70%;
+
         border: none;
     }
 

@@ -12,19 +12,19 @@ function Create({
     const [title, setTitle] = useState("")
 
     function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault()
 
-        if (title.trim() === "") return;
+        if (title.trim() === "") return
 
         addFolder({
             id: Date.now(),
             title,
             color,
             todos: []
-        });
+        })
 
-        setOpen(false);
-        setTitle("");
+        setOpen(false)
+        setTitle("")
     }
 
     return (
