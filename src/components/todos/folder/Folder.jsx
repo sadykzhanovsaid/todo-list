@@ -33,6 +33,7 @@ function Folder({el, updateFolder, deleteFolder}) {
                         }
                     }}
                     style={{
+                        backgroundColor: "red",
                         color: el.color,
                         caretColor: el.color
                     }}
