@@ -37,10 +37,6 @@ function App() {
         setFolders(prev => prev.filter(folder => folder.id !== id));
         setCategory("all")
 
-        console.log(
-            folders.length
-        )
-
         if (folders.length >= 2) {
             setIsMenu(!isMenu)
         }

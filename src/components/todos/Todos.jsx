@@ -11,10 +11,11 @@ function Todos({
                    setFolders,
                    category,
                    setCategory,
-                   updateFolder
+                   updateFolder,
+                   deleteFolder
                }) {
 
-    const el = folders.find(folder => folder.id === category);
+    const el = folders.find(folder => folder.id === category)
 
     return (
         <div
@@ -26,9 +27,9 @@ function Todos({
                     {category === "all" ?
                         <div className="todos__folders">
                             {folders.map((el) => {
-                                return <Folder key={el.id} el={el} updateFolder={updateFolder}/>
+                                return <Folder key={el.id} el={el} updateFolder={updateFolder} deleteFolder={deleteFolder}/>
                             })}
-                        </div> : el ? <Folder key={el.id} el={el} updateFolder={updateFolder}/> : null}
+                        </div> : el ? <Folder key={el.id} el={el} updateFolder={updateFolder} deleteFolder={deleteFolder}/> : null}
                 </> : <Empty/>
             }
         </div>
