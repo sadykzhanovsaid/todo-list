@@ -18,7 +18,7 @@ function Folder({el, updateFolder, deleteFolder}) {
                     type="text"
                     onFocus={() => setIsFocus(true)}
                     onBlur={() => setIsFocus(false)}
-                    size={Math.min(Math.max(el.title.length, 1), 20)}
+                    size={Math.min(Math.max(el.title.length, 1), 22)}
                     onClick={(e) => e.stopPropagation()}
                     onChange={(e) => {
                         const value = e.target.value;
