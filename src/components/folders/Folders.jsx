@@ -85,6 +85,7 @@ function Folders({
                 <Add className="folders__add-icon"/>
                 Добавить папку
             </button>
+            <button onClick={() => setFolders([])}>clear</button>
         </div>
     );
 }

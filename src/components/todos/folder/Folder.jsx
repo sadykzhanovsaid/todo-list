@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react"
+import React, {useRef, useState} from "react"
 import "./Folder.css"
 
 import Change from "../../../assets/change.svg?react"
@@ -6,6 +6,7 @@ import Change from "../../../assets/change.svg?react"
 function Folder({el, updateFolder, deleteFolder}) {
     const [isFocus, setIsFocus] = useState(false);
     const inputRef = useRef(null);
+    const [wasEmpty, setWasEmpty] = useState(false);
 
     return (
         <div className="folder">
@@ -19,9 +20,15 @@ function Folder({el, updateFolder, deleteFolder}) {
                     onBlur={() => setIsFocus(false)}
                     size={Math.min(Math.max(el.title.length, 1), 20)}
                     onClick={(e) => e.stopPropagation()}
-                    onChange={(e) => updateFolder(el.id, e.target.value)}
+                    onChange={(e) => {
+                        const value = e.target.value;
+
+                        updateFolder(el.id, value);
+                        setWasEmpty(value === "");
+                    }}
+
                     onKeyDown={(e) => {
-                        if (e.key === "Backspace" && el.title.trim() === "") {
+                        if (e.key === "Backspace" && wasEmpty) {
                             deleteFolder(el.id);
                         }
                     }}
