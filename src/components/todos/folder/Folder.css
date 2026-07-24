@@ -114,6 +114,8 @@
 
     background-color: #4DD599;
     border-radius: calc(4px * 1.1);
+
+    cursor: pointer;
 }
 
 .folder__add-cancel {
@@ -128,6 +130,8 @@
 
     background-color: #F4F6F8;
     border-radius: calc(4px * 1.1);
+
+    cursor: pointer;
 }
 
 

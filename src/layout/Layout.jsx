@@ -14,7 +14,8 @@ function Layout({
                     setIsMenu,
                     addFolder,
                     deleteFolder,
-                    updateFolder
+                    updateFolder,
+                    addTodo
                 }) {
     useEffect(() => {
         if (isMenu) {
@@ -58,6 +59,7 @@ function Layout({
                 category={category}
                 setCategory={setCategory}
                 updateFolder={updateFolder}
+                addTodo={addTodo}
             />
         </div>
     );

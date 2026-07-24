@@ -23,7 +23,7 @@ function Create({
             todos: []
         })
 
-        setOpen(false)
+        setOpen(!open)
         setTitle("")
     }
 

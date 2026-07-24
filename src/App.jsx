@@ -52,6 +52,20 @@ function App() {
         )
     }
 
+    function addTodo(folderId, newTodo) {
+        setFolders(prevFolders =>
+            prevFolders.map(folder => {
+                if (folder.id === folderId) {
+                    return {
+                        ...folder,
+                        todos: [...(folder.todos || []), newTodo]
+                    }
+                }
+                return folder
+            })
+        )
+    }
+
     return (
         <>
             <Layout
@@ -66,6 +80,7 @@ function App() {
                 addFolder={addFolder}
                 deleteFolder={deleteFolder}
                 updateFolder={updateFolder}
+                addTodo={addTodo}
             />
             <Create
                 open={open}
