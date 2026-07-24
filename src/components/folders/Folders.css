@@ -90,16 +90,27 @@
     &:not(:hover) .folders__folder.active {
         background-color: white;
     }
+
+    &:hover {
+        .folders__folder.active:not(:hover) .folders__folder-delete {
+            opacity: 0;
+        }
+
+        .folders__folder:hover .folders__folder-delete {
+            opacity: 1;
+        }
+    }
 }
 
 .folders__folder {
-    padding: calc(10px * 1.1);
+    padding: 0 0 0 calc(10px * 1.1);
 
     width: 100%;
+    height: 38px;
 
     display: flex;
     align-items: center;
-    gap: calc(10px * 1.1);
+    justify-content: space-between;
 
     position: relative;
 
@@ -129,6 +140,8 @@
 }
 
 .folders__folder-title {
+    margin-left: 10px;
+
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
@@ -136,7 +149,7 @@
 
     text-align: start;
 
-    width: 75%;
+    width: calc(100% - 11px - 40px - 10px);
 
     white-space: nowrap;
     overflow: hidden;
@@ -145,13 +158,14 @@
 
 .folders__folder.active .folders__folder-delete {
     opacity: 1;
+
+    pointer-events: auto;
 }
 
 .folders__folder-delete {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    pointer-events: none;
+
+    padding: 10px 15px;
 
     transition: all 0.3s ease;
 

@@ -66,13 +66,14 @@ function Folders({
 
                                     <p className="folders__folder-title">{folder.title}</p>
 
-                                    <Delete
-                                        className="folders__folder-delete"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            deleteFolder(folder.id)
-                                        }}
-                                    />
+                                    <div className="folders__folder-delete">
+                                        <Delete
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                deleteFolder(folder.id)
+                                            }}
+                                        />
+                                    </div>
                                 </button>
                             )
                         })}
