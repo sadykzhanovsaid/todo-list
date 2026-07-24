@@ -1,17 +1,10 @@
-import React, {useRef, useState} from "react"
+import React, {useRef} from "react"
 import "./Folder.css"
+
+import {getTextWidth} from "../../../utils/getTextWidth.jsx"
 
 import Change from "../../../assets/change.svg?react"
 import Add from "../../../assets/add-v2.svg?react"
-
-function getTextWidth(text, font = " 600 32px Montserrat") {
-    const canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"))
-    const context = canvas.getContext("2d")
-    context.font = font
-
-    const metrics = context.measureText(text)
-    return Math.ceil(metrics.width)
-}
 
 function Folder({
                     folder,
@@ -40,7 +33,8 @@ function Folder({
                     style={{
                         width: `${inputWidth}px`,
                         color: folder.color,
-                        caretColor: folder.color
+                        caretColor: folder.color,
+                        borderColor: folder.title.length === 0 ? folder.color : "transparent"
                     }}
                     ref={inputRef}
                     value={folder.title}
