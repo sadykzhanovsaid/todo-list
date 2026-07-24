@@ -1,0 +1,21 @@
+.folder {}
+
+.folder__line {
+    width: 100%;
+    height: 1px;
+
+    background-color: #F2F2F2;
+}
+
+.folder__title {
+    max-width: 100%;
+
+    font-size: 32px;
+    background-color: red;
+}
+
+.folder__title.truncated {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

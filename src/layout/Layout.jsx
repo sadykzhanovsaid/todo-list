@@ -57,6 +57,7 @@ function Layout({
                 setFolders={setFolders}
                 category={category}
                 setCategory={setCategory}
+                updateFolder={updateFolder}
             />
         </div>
     );
