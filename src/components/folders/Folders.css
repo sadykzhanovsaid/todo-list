@@ -90,8 +90,10 @@
     &:not(:hover) .folders__folder.active {
         background-color: white;
     }
+}
 
-    &:hover {
+@media (hover: hover) {
+    .folders__list:hover {
         .folders__folder.active:not(:hover) .folders__folder-delete {
             opacity: 0;
         }
