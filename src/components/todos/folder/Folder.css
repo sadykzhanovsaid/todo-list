@@ -1,4 +1,8 @@
-.folder {}
+.folder {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20px * 1.1);
+}
 
 .folder__line {
     width: 100%;
@@ -7,15 +11,31 @@
     background-color: #F2F2F2;
 }
 
-.folder__title {
-    max-width: 100%;
+.folder__title-block {
+    display: flex;
+    align-items: center;
+}
 
+.folder__title {
+    max-width: calc(100% - calc(15px * 1.1) - 20px);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
     font-size: 32px;
-    background-color: red;
+    line-height: 100%;
 }
 
 .folder__title.truncated {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.folder__change {
+    padding: 10px;
+
+    & > svg {
+        width: calc(15px * 1.1);
+        height: calc(15px * 1.1);
+    }
 }
