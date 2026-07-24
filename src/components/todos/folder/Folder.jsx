@@ -1,9 +1,10 @@
-import React, {useState, useRef} from "react"
+import React, {useRef, useState} from "react"
 import "./Folder.css"
 
 import Change from "../../../assets/change.svg?react"
+import Add from "../../../assets/add-v2.svg?react"
 
-function getTextWidth(text, font = "32px Montserrat") {
+function getTextWidth(text, font = " 600 32px Montserrat") {
     const canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"))
     const context = canvas.getContext("2d")
     context.font = font
@@ -12,11 +13,15 @@ function getTextWidth(text, font = "32px Montserrat") {
     return Math.ceil(metrics.width)
 }
 
-function Folder({folder, updateFolder}) {
-    const fontSpec = "600 32px Montserrat"
-    const textWidth = getTextWidth(folder.title || "", fontSpec)
+function Folder({
+                    folder,
+                    setFolders,
+                    category,
+                    setCategory,
+                    updateFolder
+                }) {
+    const textWidth = getTextWidth(folder.title || "")
     const inputWidth = Math.max(textWidth + 16, 40)
-    const [isFocus, setIsFocus] = useState(true)
     const inputRef = useRef(null)
 
     function handleChangeClick(e) {
@@ -39,11 +44,9 @@ function Folder({folder, updateFolder}) {
                     }}
                     ref={inputRef}
                     value={folder.title}
-                    className={`folder__title ${isFocus ? "truncated" : ""}`}
+                    className="folder__title"
                     onChange={(e) => updateFolder(folder.id, e.target.value)}
                     onClick={(e) => e.stopPropagation()}
-                    onFocus={() => setIsFocus(false)}
-                    onBlur={() => setIsFocus(true)}
                 />
 
                 <div
@@ -53,7 +56,19 @@ function Folder({folder, updateFolder}) {
                     <Change/>
                 </div>
             </div>
+
             <div className="folder__line"></div>
+
+            {category !== "all" ?
+                <button
+                    className="folder__add"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <Add/>
+
+                    Новая задача
+                </button> : null
+            }
         </div>
     );
 }

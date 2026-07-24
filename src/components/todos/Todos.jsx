@@ -30,9 +30,9 @@ function Todos({
                     {category === "all" ?
                         <div className="todos__folders">
                             {folders.map((folder) => {
-                                return <Folder key={folder.id} folder={folder} updateFolder={updateFolder}/>
+                                return <Folder key={folder.id} folder={folder} setFolders={setFolders} category={category} setCategory={setCategory} updateFolder={updateFolder}/>
                             })}
-                        </div> : folder ? <Folder key={folder.id} folder={folder} updateFolder={updateFolder}/> : null}
+                        </div> : folder ? <Folder key={folder.id} folder={folder} setFolders={setFolders} category={category} setCategory={setCategory} updateFolder={updateFolder}/> : null}
                 </> : <Empty/>
             }
         </div>
