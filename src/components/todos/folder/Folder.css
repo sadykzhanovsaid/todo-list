@@ -44,7 +44,7 @@
     background-color: #F2F2F2;
 }
 
-.folder__add {
+.folder__add-hero {
     padding: calc(10px * 1.1) calc(10px * 1.1) calc(10px * 1.1) 0;
 
     display: flex;
@@ -66,3 +66,76 @@
         height: calc(16px * 1.1);
     }
 }
+
+.folder__add {
+    display: flex;
+    flex-direction: column;
+    gap: calc(15px * 1.1);
+}
+
+.folder__add-input {
+    padding: calc(10px * 1.1) calc(15px * 1.1);
+
+    width: 100%;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #C7C7C7;
+
+    border: 1px solid #EFEFEF;
+    border-radius: calc(4px * 1.1);
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: #C7C7C7;
+    }
+}
+
+.folder__add-buttons {
+    width: calc(300px * 1.1);
+
+    display: flex;
+    align-items: center;
+    gap: calc(10px * 1.1);
+}
+
+.folder__add-submit {
+    padding: calc(10px * 1.1);
+
+    width: 60%;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #FFFFFF;
+
+    background-color: #4DD599;
+    border-radius: calc(4px * 1.1);
+}
+
+.folder__add-cancel {
+    padding: calc(10px * 1.1);
+
+    width: 40%;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #9C9C9C;
+
+    background-color: #F4F6F8;
+    border-radius: calc(4px * 1.1);
+}
+
+
+
+
+
+
+
+
+
+

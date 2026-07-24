@@ -1,4 +1,4 @@
-import React, {useRef} from "react"
+import React, {useRef, useState} from "react"
 import "./Folder.css"
 
 import {getTextWidth} from "../../../utils/getTextWidth.jsx"
@@ -16,6 +16,7 @@ function Folder({
     const textWidth = getTextWidth(folder.title || "")
     const inputWidth = Math.max(textWidth + 16, 40)
     const inputRef = useRef(null)
+    const [isAddTodo, setIsAddTodo] = useState(false)
 
     function handleChangeClick(e) {
         e.stopPropagation()
@@ -53,15 +54,40 @@ function Folder({
 
             <div className="folder__line"></div>
 
-            {category !== "all" ?
-                <button
-                    className="folder__add"
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    <Add/>
+            {category === "all" ? null :
+                <>
+                    {isAddTodo ?
+                        <div
+                            className="folder__add"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <input
+                                type="text"
+                                className="folder__add-input"
+                                placeholder="Текст задачи"
+                            />
+                            <div className="folder__add-buttons">
+                                <button className="folder__add-submit">Добавить задачу</button>
+                                <button
+                                    className="folder__add-cancel"
+                                    onClick={() => setIsAddTodo(!isAddTodo)}
+                                >Отмена</button>
+                            </div>
+                        </div>
+                        :
+                        <button
+                            className="folder__add-hero"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                setIsAddTodo(!isAddTodo)
+                            }}
+                        >
+                            <Add/>
 
-                    Новая задача
-                </button> : null
+                            Новая задача
+                        </button>
+                    }
+                </>
             }
         </div>
     );

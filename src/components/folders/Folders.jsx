@@ -64,7 +64,7 @@ function Folders({
                                         style={{backgroundColor: folder.color}}
                                     ></div>
 
-                                    <p className="folders__folder-title">{folder.title}</p>
+                                    <p className="folders__folder-title">{folder.title || "_"}</p>
 
                                     <div className="folders__folder-delete">
                                         <Delete
