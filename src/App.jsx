@@ -66,6 +66,39 @@ function App() {
         )
     }
 
+    function toggleTodo(folderId, todoId) {
+        setFolders(prevFolders =>
+            prevFolders.map(folder => {
+                if (folder.id === folderId) {
+                    return {
+                        ...folder,
+                        todos: (folder.todos || []).map(todo => {
+                            if (todo.id === todoId) {
+                                return { ...todo, completed: !todo.completed }
+                            }
+                            return todo
+                        })
+                    }
+                }
+                return folder
+            })
+        )
+    }
+
+    function deleteTodo(folderId, todoId) {
+        setFolders(prevFolders =>
+            prevFolders.map(folder => {
+                if (folder.id === folderId) {
+                    return {
+                        ...folder,
+                        todos: (folder.todos || []).filter(todo => todo.id !== todoId)
+                    }
+                }
+                return folder
+            })
+        )
+    }
+
     return (
         <>
             <Layout
@@ -81,6 +114,8 @@ function App() {
                 deleteFolder={deleteFolder}
                 updateFolder={updateFolder}
                 addTodo={addTodo}
+                toggleTodo={toggleTodo}
+                deleteTodo={deleteTodo}
             />
             <Create
                 open={open}

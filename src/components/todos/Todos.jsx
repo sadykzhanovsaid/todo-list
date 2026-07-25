@@ -12,7 +12,9 @@ function Todos({
                    category,
                    setCategory,
                    updateFolder,
-                   addTodo
+                   addTodo,
+                   toggleTodo,
+                   deleteTodo
                }) {
 
     const folder = folders.find(folder => folder.id === category)
@@ -31,9 +33,31 @@ function Todos({
                     {category === "all" ?
                         <div className="todos__folders">
                             {folders.map((folder) => {
-                                return <Folder key={folder.id} folder={folder} setFolders={setFolders} category={category} setCategory={setCategory} updateFolder={updateFolder} addTodo={addTodo}/>
+                                return <Folder
+                                    key={folder.id}
+                                    folder={folder}
+                                    setFolders={setFolders}
+                                    category={category}
+                                    setCategory={setCategory}
+                                    updateFolder={updateFolder}
+                                    addTodo={addTodo}
+                                    toggleTodo={toggleTodo}
+                                    deleteTodo={deleteTodo}
+                                />
                             })}
-                        </div> : folder ? <Folder key={folder.id} folder={folder} setFolders={setFolders} category={category} setCategory={setCategory} updateFolder={updateFolder} addTodo={addTodo}/> : null}
+                        </div> : folder ?
+                            <Folder
+                                key={folder.id}
+                                folder={folder}
+                                setFolders={setFolders}
+                                category={category}
+                                setCategory={setCategory}
+                                updateFolder={updateFolder}
+                                addTodo={addTodo}
+                                toggleTodo={toggleTodo}
+                                deleteTodo={deleteTodo}
+                            /> : null
+                    }
                 </> : <Empty/>
             }
         </div>

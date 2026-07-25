@@ -5,6 +5,8 @@ import {getTextWidth} from "../../../utils/getTextWidth.jsx"
 
 import Change from "../../../assets/change.svg?react"
 import Add from "../../../assets/add-v2.svg?react"
+import Completed from "../../../assets/completed.svg?react"
+import Delete from "../../../assets/delete.svg?react"
 
 function Folder({
                     folder,
@@ -12,12 +14,13 @@ function Folder({
                     category,
                     setCategory,
                     updateFolder,
-                    addTodo
+                    addTodo,
+                    toggleTodo,
+                    deleteTodo
                 }) {
     const textWidth = getTextWidth(folder.title || "")
     const inputWidth = Math.max(textWidth + 16, 40)
     const titleRef = useRef(null)
-    const addRef = useRef(null)
     const [isAddTodo, setIsAddTodo] = useState(false)
     const [title, setTitle] = useState("")
 
@@ -73,7 +76,20 @@ function Folder({
             <div className="folder__line"></div>
 
             {folder.todos.map(todo => {
-                return <p key={todo.id}>{todo.title}</p>
+                return <div key={todo.id} className="todo">
+                    <div
+                        onClick={() => toggleTodo(folder.id, todo.id)}
+                        className={`todo__completed ${todo.completed ? "completed" : ""}`}
+                    >
+                        <Completed/>
+                    </div>
+
+                    <p className="todo__title">{todo.title}</p>
+
+                    <div className="todo__delete" onClick={() => deleteTodo(folder.id, todo.id)}>
+                        <Delete/>
+                    </div>
+                </div>
             })}
 
             {category === "all" ? null :
@@ -101,7 +117,8 @@ function Folder({
                                 <button
                                     className="folder__add-cancel"
                                     onClick={() => setIsAddTodo(!isAddTodo)}
-                                >Отмена</button>
+                                >Отмена
+                                </button>
                             </div>
                         </form>
                         :
