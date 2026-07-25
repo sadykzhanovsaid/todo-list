@@ -218,3 +218,10 @@
         height: calc(11px * 1.1);
     }
 }
+
+@media (hover: none) {
+    .todo__delete {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
