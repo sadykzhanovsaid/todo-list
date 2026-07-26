@@ -51,6 +51,7 @@ function Folder({
         <div className="folder">
             <div className="folder__title-block">
                 <input
+                    spellcheck="false"
                     type="text"
                     style={{
                         width: `${inputWidth}px`,
@@ -76,7 +77,11 @@ function Folder({
             <div className="folder__line"></div>
 
             {folder.todos.map(todo => {
-                return <div key={todo.id} className="todo">
+                return <div
+                    key={todo.id}
+                    className="todo"
+                    onClick={(e) => e.stopPropagation()}
+                >
                     <div
                         onClick={() => toggleTodo(folder.id, todo.id)}
                         className={`todo__completed ${todo.completed ? "completed" : ""}`}

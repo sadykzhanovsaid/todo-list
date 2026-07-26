@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useRef, useState, useEffect} from "react"
 import "./Create.css"
 
 import Close from "../../assets/close.svg?react"
@@ -10,6 +10,7 @@ function Create({
                 }) {
     const [color, setColor] = useState("#C9D1D3")
     const [title, setTitle] = useState("")
+    const inputRef = useRef(null)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -27,6 +28,12 @@ function Create({
         setTitle("")
     }
 
+    useEffect(() => {
+        if (open) {
+            inputRef.current?.focus()
+        }
+    }, [open])
+
     return (
         <form className={`create ${open ? "active" : ""}`} onSubmit={handleSubmit}>
             <Close className="create__close" onClick={() => {
@@ -35,6 +42,7 @@ function Create({
             }}/>
 
             <input
+                ref={inputRef}
                 type="text"
                 onChange={(e) => {
                     const value = e.target.value
