@@ -5,11 +5,12 @@ import {getTextWidth} from "../../../utils/getTextWidth.jsx"
 
 import Change from "../../../assets/change.svg?react"
 import Add from "../../../assets/add-v2.svg?react"
-import Completed from "../../../assets/completed.svg?react"
-import Delete from "../../../assets/delete.svg?react"
+
+import Todo from "../todo/Todo.jsx"
 
 function Folder({
                     folder,
+                    folders,
                     setFolders,
                     category,
                     setCategory,
@@ -23,6 +24,7 @@ function Folder({
     const titleRef = useRef(null)
     const [isAddTodo, setIsAddTodo] = useState(false)
     const [title, setTitle] = useState("")
+    const todoTitleRef = useRef(null)
 
     function handleFocusTitle(e) {
         e.stopPropagation()
@@ -77,27 +79,10 @@ function Folder({
             <div className="folder__line"></div>
 
             {folder.todos.map(todo => {
-                return <div
-                    key={todo.id}
-                    className="todo"
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    <div
-                        onClick={() => toggleTodo(folder.id, todo.id)}
-                        className={`todo__completed ${todo.completed ? "completed" : ""}`}
-                    >
-                        <Completed/>
-                    </div>
-
-                    <p className="todo__title">{todo.title}</p>
-
-                    <div className="todo__delete" onClick={() => deleteTodo(folder.id, todo.id)}>
-                        <Delete/>
-                    </div>
-                </div>
+                return <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo} folder={folder} deleteTodo={deleteTodo}/>
             })}
 
-            {category === "all" ? null :
+            {folders.length !== 1 && category === "all" ? null :
                 <>
                     {isAddTodo ?
                         <form

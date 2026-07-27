@@ -36,6 +36,7 @@ function Todos({
                                 return <Folder
                                     key={folder.id}
                                     folder={folder}
+                                    folders={folders}
                                     setFolders={setFolders}
                                     category={category}
                                     setCategory={setCategory}
@@ -49,6 +50,7 @@ function Todos({
                             <Folder
                                 key={folder.id}
                                 folder={folder}
+                                folders={folders}
                                 setFolders={setFolders}
                                 category={category}
                                 setCategory={setCategory}

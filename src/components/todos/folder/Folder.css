@@ -138,6 +138,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    transition: all 0.3s ease;
+
+    &.start {
+        align-items: start;
+
+        & .todo__completed {
+            margin-top: 2px;
+        }
+    }
 }
 
 @media (hover: hover) {
@@ -225,3 +235,12 @@
         pointer-events: auto;
     }
 }
+
+
+@supports selector(:has(*)) {
+    /* Если заголовок больше 1 строки (высота больше line-height, т.е. > ~20px) */
+    .todo:has(.todo__title:nth-line(2)) {
+        align-items: flex-start;
+    }
+}
+
