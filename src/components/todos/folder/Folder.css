@@ -147,6 +147,10 @@
         & .todo__completed {
             margin-top: 2px;
         }
+
+        & .todo__delete {
+            padding-top: 0;
+        }
     }
 }
 
@@ -235,12 +239,3 @@
         pointer-events: auto;
     }
 }
-
-
-@supports selector(:has(*)) {
-    /* Если заголовок больше 1 строки (высота больше line-height, т.е. > ~20px) */
-    .todo:has(.todo__title:nth-line(2)) {
-        align-items: flex-start;
-    }
-}
-
