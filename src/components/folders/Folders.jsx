@@ -101,7 +101,7 @@ function Folders({
                 Добавить папку
             </button>
 
-            {folders.length !== 0 ? <button className="folders__add" onClick={() => setFolders([])}>- clear</button> : null}
+            {/*{folders.length !== 0 ? <button className="folders__add" onClick={() => setFolders([])}>- clear</button> : null}*/}
         </div>
     );
 }

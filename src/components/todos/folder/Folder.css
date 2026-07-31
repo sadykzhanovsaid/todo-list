@@ -27,7 +27,8 @@
 }
 
 .folder__change {
-    padding: 10px;
+    position: relative;
+    padding-left: 10px;
 
     cursor: pointer;
 
@@ -35,6 +36,19 @@
         width: calc(15px * 1.1);
         height: calc(15px * 1.1);
     }
+}
+
+.folder__change::before {
+    content: '';
+    position: absolute;
+    /* Отрицательные значения расширяют область клика в каждую сторону */
+    top: -15px;    /* Расширяем вверх */
+    bottom: -15px; /* Расширяем вниз */
+    left: -15px;   /* Расширяем влево */
+    right: -15px;  /* Расширяем вправо */
+
+    /* Сделайте прозрачным background, если нужно отлаживать: */
+    /* background: rgba(255, 0, 0, 0.2); */
 }
 
 .folder__line {
@@ -147,10 +161,6 @@
         & .todo__completed {
             margin-top: 2px;
         }
-
-        & .todo__delete {
-            padding-top: 0;
-        }
     }
 }
 
@@ -185,6 +195,8 @@
     border-radius: 50%;
     border: 2px solid #E8E8E8;
 
+    position: relative;
+
     cursor: pointer;
 
     transition: all 0.3s ease;
@@ -205,10 +217,23 @@
     }
 }
 
+.todo__completed::before {
+    content: '';
+    position: absolute;
+    /* Отрицательные значения расширяют область клика в каждую сторону */
+    top: -15px;    /* Расширяем вверх */
+    bottom: -15px; /* Расширяем вниз */
+    left: -15px;   /* Расширяем влево */
+    right: -15px;  /* Расширяем вправо */
+
+    /* Сделайте прозрачным background, если нужно отлаживать: */
+    /* background: rgba(255, 0, 0, 0.2); */
+}
+
 .todo__title {
     padding-left: 15px;
 
-    width: calc(100% - 22px - 34px);
+    width: calc(100% - 22px - 12px);
 
     font-weight: 400;
     font-size: 16px;
@@ -217,8 +242,6 @@
 }
 
 .todo__delete {
-    padding: calc(5px * 1.1) calc(10px * 1.1);
-
     opacity: 0;
 
     pointer-events: none;
@@ -227,10 +250,25 @@
 
     cursor: pointer;
 
+    position: relative;
+
     & > svg {
         width: calc(11px * 1.1);
         height: calc(11px * 1.1);
     }
+}
+
+.todo__delete::before {
+    content: '';
+    position: absolute;
+    /* Отрицательные значения расширяют область клика в каждую сторону */
+    top: -15px;    /* Расширяем вверх */
+    bottom: -15px; /* Расширяем вниз */
+    left: -15px;   /* Расширяем влево */
+    right: -15px;  /* Расширяем вправо */
+
+    /* Сделайте прозрачным background, если нужно отлаживать: */
+    /* background: rgba(255, 0, 0, 0.2); */
 }
 
 @media (hover: none) {
