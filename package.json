@@ -13,7 +13,8 @@
     "framer-motion": "^12.43.0",
     "lucide-react": "^1.25.0",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-swipeable": "^7.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

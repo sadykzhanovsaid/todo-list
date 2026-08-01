@@ -9,6 +9,8 @@
 
     overflow-y: scroll;
 
+    touch-action: pan-y;
+
     &.empty {
         display: flex;
         align-items: center;

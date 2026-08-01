@@ -11,6 +11,8 @@ import Todo from "../todo/Todo.jsx"
 function Folder({
                     folder,
                     folders,
+                    isMenu,
+                    setIsMenu,
                     setFolders,
                     category,
                     setCategory,
@@ -53,7 +55,7 @@ function Folder({
         <div className="folder">
             <div className="folder__title-block">
                 <input
-                    spellcheck="false"
+                    spellCheck={false}
                     type="text"
                     style={{
                         width: `${inputWidth}px`,
@@ -65,7 +67,14 @@ function Folder({
                     value={folder.title}
                     className="folder__title"
                     onChange={(e) => updateFolder(folder.id, e.target.value)}
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                        if (category === "all") {
+                            setCategory(folder.id)
+                            e.stopPropagation()
+                        } else {
+                            e.stopPropagation()
+                        }
+                    }}
                 />
 
                 <div
