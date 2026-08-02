@@ -28,6 +28,8 @@ function Todos({
             // }}
             className={`todos ${isMenu ? "" : `active`} ${folders.length === 0 ? "empty" : ""}`}
         >
+            <div onClick={() => setIsMenu(!isMenu)} className={`blur ${isMenu ? "active" : ""}`}></div>
+
             {folders.length >= 1 ?
                 <>
                     {category === "all" ?
