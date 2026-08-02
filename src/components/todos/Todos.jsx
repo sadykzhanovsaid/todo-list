@@ -21,11 +21,11 @@ function Todos({
 
     return (
         <div
-            onClick={() => {
-                if (window.innerWidth <= 480) {
-                    setIsMenu(!isMenu)
-                }
-            }}
+            // onClick={() => {
+            //     if (window.innerWidth <= 480) {
+            //         setIsMenu(!isMenu)
+            //     }
+            // }}
             className={`todos ${isMenu ? "" : `active`} ${folders.length === 0 ? "empty" : ""}`}
         >
             {folders.length >= 1 ?

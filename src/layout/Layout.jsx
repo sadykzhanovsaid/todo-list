@@ -1,5 +1,6 @@
 import React, {useEffect} from "react"
 import "./Layout.css"
+import { useSwipeable } from "react-swipeable" // 1. Импортируем хук
 
 import Folders from "../components/folders/Folders.jsx"
 import Todos from "../components/todos/Todos.jsx"
@@ -39,8 +40,15 @@ function Layout({
         }
     }, [])
 
+    const handlers = useSwipeable({
+        onSwipedLeft: () => setIsMenu(false),  // Свайп влево закрывает меню
+        onSwipedRight: () => setIsMenu(true),  // Свайп вправо открывает меню
+        trackMouse: false,                     // Отслеживать только касания на тачскринах
+        delta: 50                              // Минимальное расстояние свайпа в px для срабатывания
+    });
+
     return (
-        <div className="application">
+        <div className="application" {...handlers}>
             <Folders
                 isMenu={isMenu}
                 setIsMenu={setIsMenu}
