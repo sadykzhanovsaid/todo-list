@@ -1,6 +1,4 @@
 .todos {
-    padding: calc(50px * 1.1) calc(50px * 1.1);
-
     width: calc(100% - calc(200px * 1.1));
 
     background-color: white;
@@ -30,8 +28,6 @@
 
 @media (max-width: 480px) {
     .todos {
-        padding: calc(30px * 1.1) calc(20px * 1.1);
-
         width: 100%;
         height: 100%;
 
@@ -43,6 +39,10 @@
         border: 1px solid #F1F1F1;
         border-top-left-radius: 48px;
         border-bottom-left-radius: 48px;
+
+        & .todos__wrapper {
+            padding: calc(30px * 1.1) calc(20px * 1.1);
+        }
     }
 
     .todos.active {
@@ -64,16 +64,15 @@
 
 .blur {
     z-index: -1;
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
     backdrop-filter: blur(0);
 
     position: absolute;
     top: 0;
-    left: calc(70% + 1px);
-
-    border-top-left-radius: 48px;
-    border-bottom-left-radius: 48px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     transition: all 0.5s ease;
 
@@ -81,4 +80,12 @@
         z-index: 100;
         backdrop-filter: blur(3px);
     }
+}
+
+/* Обертка для всего внутреннего содержимого */
+.todos__wrapper {
+    padding: calc(50px * 1.1) calc(50px * 1.1);
+    position: relative; /* Теперь .blur позиционируется относительно этого блока! */
+    min-height: 100%;    /* Занимает минимум всю высоту видимого окна */
+    width: 100%;
 }

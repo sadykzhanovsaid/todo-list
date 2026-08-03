@@ -20,17 +20,17 @@ function Todos({
     const folder = folders.find(folder => folder.id === category)
 
     return (
-        <>
-            <div onClick={() => setIsMenu(!isMenu)} className={`blur ${isMenu ? "active" : ""}`}></div>
+        <div
+            // onClick={() => {
+            //     if (window.innerWidth <= 480) {
+            //         setIsMenu(!isMenu)
+            //     }
+            // }}
+            className={`todos ${isMenu ? "" : `active`} ${folders.length === 0 ? "empty" : ""}`}
+        >
+            <div className="todos__wrapper">
+                <div onClick={() => setIsMenu(!isMenu)} className={`blur ${isMenu ? "active" : ""}`}></div>
 
-            <div
-                // onClick={() => {
-                //     if (window.innerWidth <= 480) {
-                //         setIsMenu(!isMenu)
-                //     }
-                // }}
-                className={`todos ${isMenu ? "" : `active`} ${folders.length === 0 ? "empty" : ""}`}
-            >
                 {folders.length >= 1 ?
                     <>
                         {category === "all" ?
@@ -70,7 +70,7 @@ function Todos({
                     </> : <Empty/>
                 }
             </div>
-        </>
+        </div>
     );
 }
 
