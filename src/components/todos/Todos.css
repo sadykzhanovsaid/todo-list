@@ -68,11 +68,14 @@
     height: 100%;
     backdrop-filter: blur(0);
 
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
+    left: calc(70% + 1px);
 
     transition: all 0.5s ease;
+
+    border-top-left-radius: 49px;
+    border-bottom-left-radius: 49px;
 
     &.active {
         z-index: 100;
