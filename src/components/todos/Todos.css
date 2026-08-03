@@ -58,7 +58,10 @@
     }
 
     body.is-webapp .todos {
-        padding: calc(70px * 1.1) calc(20px * 1.1);
+
+        & .todos__wrapper {
+            padding: calc(70px * 1.1) calc(20px * 1.1);
+        }
     }
 }
 
